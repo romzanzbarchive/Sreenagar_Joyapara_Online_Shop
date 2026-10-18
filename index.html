@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>শ্রীনগর–জয়পাড়া বাজার | ঘরে বসে মুদি পণ্য</title>
+<meta name="description" content="শ্রীনগর ও জয়পাড়ায় ঘরে বসে মুদি পণ্য অর্ডার করুন। ক্যাশ অন ডেলিভারি।">
+<meta name="theme-color" content="#1f4d36">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1f4d36;--g2:#2d6a4a;--m:#f2a516;--bg:#f4f7f1;--c:#fff;--t:#17241c;--mut:#5a6b60;--b:#dbe4d6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:'Hind Siliguri',system-ui,sans-serif;background:var(--bg);color:var(--t);padding-bottom:88px;line-height:1.5}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--m);outline-offset:2px}
+.wrap{max-width:860px;margin:auto;padding:0 16px}
+.hero{background:var(--g);color:#fff;padding:28px 0 24px}
+.hero h1{margin:0 0 6px;font-size:clamp(26px,6vw,38px);line-height:1.2}
+.hero p{margin:0;opacity:.92;max-width:48ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.facts span{background:#ffffff1f;border-radius:99px;padding:5px 12px;font-size:14px}
+.tools{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0 8px;border-bottom:1px solid var(--b)}
+#q{width:100%;padding:12px 14px;border:1px solid var(--b);border-radius:10px;font:inherit;background:#fff}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;scrollbar-width:none}
+.cats button{white-space:nowrap;border:1px solid var(--b);background:#fff;border-radius:99px;padding:6px 14px;color:var(--t)}
+.cats button[aria-pressed=true]{background:var(--g);color:#fff;border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:16px 0}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--c);border:1px solid var(--b);border-radius:12px;padding:14px;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}.card .e{font-size:40px;line-height:1.1}
+.card b{margin-top:6px}.card small{color:var(--mut)}
+.price{font-weight:700;color:var(--g);font-size:19px;margin:4px 0 8px}
+.add{margin-top:auto;background:var(--m);border:0;border-radius:8px;padding:9px;font-weight:700;color:#2a1c00}
+.qty{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.qty button{width:38px;height:38px;border-radius:8px;border:1px solid var(--g);background:#fff;color:var(--g);font-size:20px}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:30px}
+.steps{background:#fff;border:1px solid var(--b);border-radius:12px;padding:16px;margin:4px 0 20px}
+.steps h2{margin:0 0 8px;font-size:18px}.steps ol{margin:0;padding-left:20px;color:var(--mut)}
+footer{background:var(--g);color:#fff;padding:20px 0;font-size:15px}
+footer a{color:var(--m)}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px;background:#fff;border-top:1px solid var(--b);z-index:10}
+.pri{display:block;width:100%;max-width:860px;margin:auto;background:var(--g);color:#fff;border:0;border-radius:10px;padding:14px;font-weight:700;font-size:17px}
+.pri:disabled{background:#9db3a2}
+dialog{border:0;border-radius:14px;width:min(94vw,540px);max-height:92vh;padding:18px}
+dialog::backdrop{background:#0008}
+dialog h2{margin:0 0 8px}
+label{display:block;margin:10px 0 4px;font-weight:600}
+input,select,textarea{width:100%;font:inherit;padding:11px;border:1px solid var(--b);border-radius:8px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.tot{font-weight:700;font-size:18px;border-top:1px solid var(--b);margin-top:6px;padding-top:8px}
+.hint{color:var(--mut);font-size:14px;margin:4px 0}
+.warn{color:#9a3412;font-size:14px;margin:6px 0}
+.x{background:none;border:0;color:var(--mut);margin-top:8px;width:100%;padding:8px}
+.hp{position:absolute;left:-9999px}
+
+.top{background:#143726;color:#fff;font-size:14px}.top .wrap{display:flex;justify-content:space-between;gap:10px;padding:7px 16px;flex-wrap:wrap}
+.top a{color:#fff;text-decoration:none;margin-left:12px}
+.hero .cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.hero .cta a{background:var(--m);color:#2a1c00;font-weight:700;padding:10px 18px;border-radius:10px;text-decoration:none}
+.hero .cta a.s{background:#ffffff1f;color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px 0 4px}
+@media(min-width:620px){.tiles{grid-template-columns:repeat(6,1fr)}}
+.tiles a{background:#fff;border:1px solid var(--b);border-radius:12px;padding:12px 4px;text-align:center;text-decoration:none;color:var(--t);font-size:14px}
+.tiles a span{display:block;font-size:30px}
+.sec{padding-top:10px}.sh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--g);margin-top:14px}
+.sh h2{margin:0;font-size:20px}.sh a{font-size:14px;color:var(--g2)}
+.card{position:relative}.badge{position:absolute;top:8px;left:8px;background:#c2410c;color:#fff;font-size:12px;border-radius:6px;padding:1px 7px}
+.badge.g{background:var(--g2)}
+.price s{color:var(--mut);font-weight:400;font-size:14px;margin-left:6px}
+.btns{margin-top:auto;display:flex;gap:6px}.btns .add{flex:1;margin:0}
+.buy{flex:1;background:var(--g);color:#fff;border:0;border-radius:8px;padding:9px;font-weight:700}
+.info{display:grid;gap:10px;margin:20px 0}@media(min-width:620px){.info{grid-template-columns:repeat(3,1fr)}}
+.info div{background:#fff;border:1px solid var(--b);border-radius:12px;padding:14px}
+.info b{display:block}.info span{color:var(--mut);font-size:14px}
+.fl{display:flex;gap:16px;flex-wrap:wrap;margin-top:8px}
+</style></head><body>
+<div class="top"><div class="wrap"><span id="tl"></span><span><a href="track.html">📦 অর্ডার ট্র্যাক</a><a id="call" href="#">📞 কল</a><a id="wa" href="#" target="_blank" rel="noopener">💬 WhatsApp</a></span></div></div>
+<header class="hero"><div class="wrap">
+<h1>শ্রীনগর–জয়পাড়া বাজার</h1>
+<p>প্রতিদিনের মুদি পণ্য অর্ডার করুন, আমরা পৌঁছে দেব আপনার দরজায়।</p>
+<div class="facts" id="facts"></div><div class="cta"><a href="#offer">অফার দেখুন</a><a class="s" href="#all">সব পণ্য</a></div></div></header>
+<div class="tools"><div class="wrap">
+<input id="q" type="search" placeholder="পণ্য খুঁজুন, যেমন: চাল" aria-label="পণ্য খুঁজুন">
+<div class="cats" id="cats"></div></div></div>
+<main class="wrap">
+<div class="tiles" id="tiles"></div><div id="sections"></div><div class="grid" id="list" hidden></div>
+<section class="info"><div><b>🚚 দ্রুত ডেলিভারি</b><span>শ্রীনগর ও জয়পাড়ায় ঘরে পৌঁছে দিই।</span></div><div><b>💵 ক্যাশ অন ডেলিভারি</b><span>পণ্য হাতে পেয়ে টাকা দিন।</span></div><div><b>🔁 সমস্যা হলে ফেরত</b><span>ভুল বা নষ্ট পণ্য ডেলিভারির সময়ই ফেরত দিন।</span></div></section>
+<section class="steps"><h2>কীভাবে অর্ডার করবেন</h2>
+<ol><li>পণ্য বেছে কার্টে যোগ করুন।</li><li>নাম, নম্বর ও ঠিকানা দিয়ে অর্ডার নিশ্চিত করুন।</li><li>আমরা ফোন করে নিশ্চিত করব, পণ্য হাতে পেয়ে টাকা দিন।</li></ol></section>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+<div id="bar"><button class="pri" id="cartBtn" disabled>কার্ট খালি</button></div>
+<dialog id="dlg">
+<form id="f"><h2>আপনার অর্ডার</h2><div id="sum"></div><div class="warn" id="minw" hidden></div>
+<label for="n">নাম</label><input id="n" name="name" autocomplete="name" required>
+<label for="p">মোবাইল নম্বর</label><input id="p" name="phone" inputmode="numeric" autocomplete="tel" pattern="01[0-9]{9}" placeholder="01XXXXXXXXX" title="১১ সংখ্যার নম্বর দিন, যেমন 01712345678" required>
+<label for="a">এলাকা</label><select id="a" name="area"></select>
+<label for="ad">পূর্ণ ঠিকানা</label><textarea id="ad" name="address" rows="2" placeholder="গ্রাম/মহল্লা, বাড়ি, পরিচিত স্থান" required></textarea>
+<label for="nt">অতিরিক্ত নোট (ঐচ্ছিক)</label><input id="nt" name="note">
+<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label for="pay">পেমেন্ট</label><select id="pay" name="payment"><option value="cod">ক্যাশ অন ডেলিভারি</option><option value="bkash">bKash</option></select>
+<div id="bk" hidden><p class="hint" id="bkm"></p><label for="trx">bKash TrxID</label><input id="trx" name="trx" placeholder="যেমন 9AB1C2D3EF"></div>
+<div class="warn" id="err" hidden></div>
+<button class="pri" id="go" style="margin-top:12px">অর্ডার নিশ্চিত করুন</button>
+<button type="button" class="x" id="close">কার্টে ফিরে যান</button></form>
+<div id="done" hidden><h2>অর্ডার পাঠানো হয়েছে</h2><p id="doneMsg"></p>
+<button class="pri" id="again">নতুন অর্ডার করুন</button></div>
+</dialog>
+<script type="module">
+const CFG=await (await fetch("config.json")).json();
+const $=id=>document.getElementById(id);
+const bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
+let P=[],cat='সব',cart={};
+try{cart=JSON.parse(localStorage.getItem('cart')||'{}')}catch{}
+$('facts').innerHTML=[`📍 ${CFG.areas.join(' ও ')}`,`🕗 ${CFG.hours}`,`🚚 ${bn(CFG.freeAbove)}৳-এর বেশি হলে ডেলিভারি ফ্রি`].map(t=>`<span>${t}</span>`).join('');
+$('foot').innerHTML=`<b>শ্রীনগর–জয়পাড়া বাজার</b><br>অর্ডার নিয়ে সমস্যা? ফোন করুন: <a href="tel:${CFG.phone}">${bn(CFG.phone)}</a> (${CFG.hours})`;
+$('tl').textContent='🕗 '+CFG.hours;$('call').href='tel:'+CFG.phone;$('wa').href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent('আসসালামু আলাইকুম, আমি অর্ডার করতে চাই।');
+$('a').innerHTML=CFG.areas.map(a=>`<option>${a}</option>`).join('');
+fetch('products.json').then(r=>r.json()).then(d=>{P=d;
+ cart=Object.fromEntries(Object.entries(cart).filter(([id])=>P.some(p=>p.id==id)));draw()});
+const fee=s=>s>=CFG.freeAbove?0:CFG.delivery;
+const sub=()=>P.reduce((a,p)=>a+(cart[p.id]||0)*p.price,0);
+const card=p=>`<div class="card">${p.old?`<span class="badge">${bn(Math.round((1-p.price/p.old)*100))}% ছাড়</span>`:p.tag=='new'?'<span class="badge g">নতুন</span>':p.tag=='best'?'<span class="badge g">সেরা বিক্রি</span>':''}${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<span class="e" aria-hidden="true">${p.emoji}</span>`}<b>${p.name}</b><small>${p.unit}</small><span class="price">${bn(p.price)}৳${p.old?`<s>${bn(p.old)}৳</s>`:''}</span>
+ ${cart[p.id]?`<div class="qty"><button data-d="-1" data-i="${p.id}" aria-label="${p.name} কমান">−</button><b>${bn(cart[p.id])}</b><button data-d="1" data-i="${p.id}" aria-label="${p.name} বাড়ান">+</button></div>`:`<div class="btns"><button class="add" data-d="1" data-i="${p.id}">কার্টে নিন</button><button class="buy" data-d="1" data-i="${p.id}" data-buy="1">এখনই কিনুন</button></div>`}</div>`;
+const slug=c=>'c-'+P.findIndex(p=>p.cat==c);
+function sec(id,title,arr,more){return arr.length?`<div class="sec" id="${id}"><div class="sh"><h2>${title}</h2>${more||''}</div><div class="grid">${arr.map(card).join('')}</div></div>`:''}
+function draw(){
+ const cs=['সব',...new Set(P.map(p=>p.cat))],k=$('q').value.trim();
+ $('cats').innerHTML=cs.map(c=>`<button aria-pressed="${c==cat}" data-c="${c}">${c}</button>`).join('');
+ $('tiles').innerHTML=cs.slice(1).map(c=>`<a href="#${slug(c)}" data-c="${c}"><span>${P.find(p=>p.cat==c).emoji}</span>${c}</a>`).join('');
+ const flat=k||cat!='সব';
+ $('tiles').hidden=$('sections').hidden=!!flat;$('list').hidden=!flat;
+ if(flat){const v=P.filter(p=>(cat=='সব'||p.cat==cat)&&p.name.includes(k));
+  $('list').innerHTML=v.length?v.map(card).join(''):'<div class="empty">কোনো পণ্য পাওয়া যায়নি। ফোনে জানান, আমরা এনে দেব।</div>'}
+ else $('sections').innerHTML=sec('offer','অফার জোন',P.filter(p=>p.old))+sec('best','সেরা বিক্রি',P.filter(p=>p.tag=='best'))
+  +'<div id="all"></div>'+cs.slice(1).map(c=>sec(slug(c),c,P.filter(p=>p.cat==c),`<a href="#" data-c="${c}">সব দেখুন</a>`)).join('');
+ const n=Object.values(cart).reduce((a,b)=>a+b,0);
+ $('cartBtn').disabled=!n;
+ $('cartBtn').textContent=n?`কার্ট দেখুন · ${bn(n)}টি পণ্য · ${bn(sub())}৳`:'কার্ট খালি';
+ try{localStorage.setItem('cart',JSON.stringify(cart))}catch{}
+}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-c]');if(!t||t.closest('dialog'))return;if(t.closest('.tiles'))return;e.preventDefault();cat=t.dataset.c;draw();scrollTo({top:0})});
+$('q').oninput=draw;
+document.querySelector('main').onclick=e=>{const b=e.target.closest('[data-i]');if(!b)return;
+ const i=b.dataset.i;cart[i]=(cart[i]||0)+Number(b.dataset.d);if(cart[i]<=0)delete cart[i];draw();if(b.dataset.buy)$('cartBtn').click()};
+$('cartBtn').onclick=()=>{
+ const s=sub(),f=fee(s);
+ $('sum').innerHTML=P.filter(p=>cart[p.id]).map(p=>`<div class="row"><span>${p.name} × ${bn(cart[p.id])}</span><span>${bn(p.price*cart[p.id])}৳</span></div>`).join('')
+ +`<div class="row"><span>ডেলিভারি চার্জ</span><span>${f?bn(f)+'৳':'ফ্রি'}</span></div><div class="row tot"><span>মোট</span><span>${bn(s+f)}৳</span></div>`;
+ const low=s<CFG.min;$('minw').hidden=!low;
+ $('minw').textContent=`ন্যূনতম অর্ডার ${bn(CFG.min)}৳। আরও ${bn(CFG.min-s)}৳-এর পণ্য যোগ করুন।`;
+ $('go').disabled=low;$('dlg').showModal()};
+$('pay').onchange=()=>{const k=$('pay').value=='bkash';$('bk').hidden=!k;$('trx').required=k;$('bkm').textContent=`${CFG.bkash} নম্বরে (Send Money) মোট টাকা পাঠিয়ে TrxID দিন।`};
+$('again').onclick=()=>location.reload();
+$('close').onclick=()=>$('dlg').close();
+$('f').onsubmit=async e=>{e.preventDefault();
+ const go=$('go'),s=sub(),f=fee(s);go.disabled=true;go.textContent='পাঠানো হচ্ছে...';$('err').hidden=true;
+ const d=Object.fromEntries(new FormData($('f')));
+ d.items=P.filter(p=>cart[p.id]).map(p=>({id:p.id,qty:cart[p.id]}));
+ try{const r=await fetch('/api/order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+  const j=await r.json();if(!r.ok)throw 0;
+  cart={};try{localStorage.removeItem('cart')}catch{}
+  $('f').hidden=true;$('done').hidden=false;
+  $('doneMsg').innerHTML=`অর্ডার নম্বর <b>${j.id}</b> (এটা সেভ রাখুন)। আমরা শিগগিরই ফোন করে নিশ্চিত করব। <br><a href="track.html?id=${j.id}">অর্ডারের অবস্থা দেখুন</a>`}
+ catch{go.disabled=false;go.textContent='আবার চেষ্টা করুন';
+  $('err').hidden=false;$('err').textContent=`অর্ডার যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন, অথবা ফোনে অর্ডার দিন: ${bn(CFG.phone)}`}};
+</script></body></html>

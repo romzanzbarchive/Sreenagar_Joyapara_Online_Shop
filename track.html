@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>অর্ডার ট্র্যাক করুন</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:'Hind Siliguri',sans-serif;background:#f4f7f1;color:#17241c;margin:0}main{max-width:480px;margin:auto;padding:20px 16px}
+input,button{font:inherit;width:100%;padding:12px;border-radius:8px;border:1px solid #dbe4d6;margin:6px 0}button{background:#1f4d36;color:#fff;border:0;font-weight:700}
+.c{background:#fff;border:1px solid #dbe4d6;border-radius:12px;padding:16px;margin-top:14px}.st{display:flex;flex-direction:column;gap:8px;margin:10px 0}.st div{padding:8px 12px;border-radius:8px;background:#eef2eb;color:#5a6b60}.st .on{background:#1f4d36;color:#fff;font-weight:700}
+</style></head><body><main><h1>অর্ডার ট্র্যাক করুন</h1><a href="/">← দোকানে ফিরুন</a>
+<form id="f"><input id="i" placeholder="অর্ডার নম্বর (যেমন SJ1234567)" required><input id="p" placeholder="মোবাইল নম্বর" inputmode="numeric" required><button>খুঁজুন</button></form><div id="o"></div>
+<script>
+const L=[['pending','অর্ডার পেয়েছি'],['confirmed','নিশ্চিত হয়েছে'],['shipping','ডেলিভারিতে আছে'],['delivered','পৌঁছে গেছে']];
+const q=new URLSearchParams(location.search);if(q.get('id'))i.value=q.get('id');
+f.onsubmit=async e=>{e.preventDefault();o.innerHTML='';
+ const r=await fetch(`/api/track?id=${encodeURIComponent(i.value)}&phone=${encodeURIComponent(p.value)}`);
+ if(!r.ok){o.innerHTML='<div class="c">অর্ডার পাওয়া যায়নি। নম্বর ও মোবাইল ঠিক আছে কি দেখুন।</div>';return}
+ const d=(await r.json()).order,n=L.findIndex(x=>x[0]==d.status);
+ o.innerHTML=`<div class="c"><b>#${d.id}</b> · মোট ${d.total}৳<br>`+(d.status=='cancelled'?'<p>এই অর্ডার বাতিল হয়েছে।</p>':`<div class="st">${L.map((x,k)=>`<div class="${k<=n?'on':''}">${x[1]}</div>`).join('')}</div>`)
+ +d.items.map(x=>`<div>${x.name} × ${x.qty}</div>`).join('')+'</div>'}
+if(i.value&&q.get('id'))p.focus();
+</script></main></body></html>
